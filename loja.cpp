@@ -82,6 +82,11 @@ ostream& operator<<(ostream& O, const Produto& P)
 
 /// IMPLEMENTE A CLASSE LIVRO
 
+bool Livro::ler(std::istream& I)
+{
+    Produto::ler(I);
+    I >> autor;
+}
 istream& operator>>(istream& I, Livro& L)
 {
   L.digitar();

@@ -36,17 +36,32 @@ std::istream& operator>>(std::istream& I, Produto& P);
 std::ostream& operator<<(std::ostream& O, const Produto& P);
 
 /// DECLARE A CLASSE LIVRO
-
+class Livro: public Produto
+{
+private:
+    std::string autor;
+public:
+    bool ler(std::istream& I);
+    void salvar(std::ostream& O);
+    void digitar();
+    void imprimir();
+};
 std::istream& operator>>(std::istream& I, Livro& L);
 std::ostream& operator<<(std::ostream& O, const Livro& L);
 
 /// DECLARE A CLASSE CD
-
+class CD: public Produto
+{
+    int num_faixas;
+};
 std::istream& operator>>(std::istream& I, CD& C);
 std::ostream& operator<<(std::ostream& O, const CD& C);
 
 /// DECLARE A CLASSE DVD
-
+class DVD: public Produto
+{
+    double duration;
+};
 std::istream& operator>>(std::istream& I, DVD& D);
 std::ostream& operator<<(std::ostream& O, const DVD& D);
 
